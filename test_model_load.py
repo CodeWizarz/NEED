@@ -1,0 +1,11 @@
+import tensorflow as tf
+model = tf.keras.models.load_model("/tmp/alpamayo_v2/model.keras", compile=False)
+test = tf.random.normal((1, 8, 88, 200, 3))
+out = model(test, training=False)
+print(f"Model loaded OK, output: {out.shape}")
+s_min = float(out[0,:,0].numpy().min())
+s_max = float(out[0,:,0].numpy().max())
+v_min = float(out[0,:,1].numpy().min())
+v_max = float(out[0,:,1].numpy().max())
+print(f"Steering range: [{s_min:.3f}, {s_max:.3f}]")
+print(f"Speed range: [{v_min:.3f}, {v_max:.3f}]")
