@@ -1,0 +1,11 @@
+*.mp4
+*.png
+*.jpg
+*.gif
+*.zip
+*.tar.gz
+*.parquet
+*.csv
+__pycache__/
+*.pyc
+.episodes/
